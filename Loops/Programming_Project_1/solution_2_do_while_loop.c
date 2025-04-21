@@ -12,34 +12,32 @@
 
   The largest number entered was 100.62 */
 
-/* Solution */
+/* Solution  1 using while loop*/
 
 #include <stdio.h>
 
 int main(void) {
+  /* Declare and initialize variables to be used */
   float number, largest_number = 0;
+  do {
 
-  printf("Enter a number ( Enter 0 to quit ): ");
-  scanf("%f", &number);
-
-  /* Check the entered number if it is not 0 */
-  while (number != 0) {
-    /* Enter the loop if the number is no 0 */
-
-    /* Check if the current entered number is larger than than the currently
-     * largest number */
-    if (number > largest_number) {
-
-      /* if the current entered number is larger than largest the assing it to
-       * the largest */
-      largest_number = number;
-    }
-
-    /* Prompt the user again to enter a number, it is hard to avoid this in a
-     * while loop */
     printf("Enter a number ( Enter 0 to quit ): ");
     scanf("%f", &number);
-  }
+
+    /* Check if the number the user has entered is less than or equal to 0 */
+    if (number <= 0) {
+      /* if true break out of the loop */
+      break;
+    }
+
+    /* if false check if the current number is larger than the largest number */
+    if (number > largest_number) {
+      /* if true then the largest number is the current number */
+      largest_number = number;
+    }
+    /* Loop again to check if the number the user has entered is greater than 0,
+     * if true continue with the loop */
+  } while (number > 0);
 
   /* If the user enters 0 quit the loop and print the current largest number */
   printf("The largest number entered was: %f\n", largest_number);
