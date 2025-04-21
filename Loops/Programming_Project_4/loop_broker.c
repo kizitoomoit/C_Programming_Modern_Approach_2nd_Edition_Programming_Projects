@@ -18,11 +18,15 @@
 #include <stdio.h>
 
 int main(void) {
+  /* Declare variables to be used */
   float commission, value;
 
+  /* Prompt the user to enter value of trade */
   printf("Enter value trade: ");
   scanf("%f", &value);
 
+  /* Check the user's input, if the value is greater than 0 enter the loop else
+   * terminate the programm */
   while (value > 0) {
     if (value < 2500.00f)
       commission = 30.00f + .017f * value;
@@ -42,6 +46,9 @@ int main(void) {
 
     printf("Commision: $%.2f\n", commission);
 
+    /* Prompt ther user to enter value again to be valued by the while loop so
+     * that we can check if we are still continuing with the loop or we are
+     * terminating */
     printf("Enter value trade: ");
     scanf("%f", &value);
   }
