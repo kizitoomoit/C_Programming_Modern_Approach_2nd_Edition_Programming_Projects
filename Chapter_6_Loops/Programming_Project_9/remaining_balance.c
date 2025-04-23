@@ -26,6 +26,7 @@
 #include <stdio.h>
 
 int main(void) {
+  int number_of_payments;
   float loan, interest_rate, monthly_payment, monthly_rate;
 
   printf("Enter amount of loan: ");
@@ -37,8 +38,18 @@ int main(void) {
   printf("Enter monthly_payment: ");
   scanf("%f", &monthly_payment);
 
+  printf("Enter number of payments: ");
+  scanf("%d", &number_of_payments);
+
   monthly_rate = ((interest_rate / 12) + 100) / 100;
 
+  for (int i = 1; i <= number_of_payments; i++) {
+    loan = (loan * monthly_rate) - monthly_payment;
+
+    printf("Balance remaining after %d payment: %.2f\n", i, loan);
+  }
+
+  /*
   printf("Monthly rate: %f\n", monthly_rate);
 
   loan = (loan * monthly_rate) - monthly_payment;
@@ -48,5 +59,7 @@ int main(void) {
   printf("Balance remaining after second payment: %.2f\n", loan);
   loan = (loan * monthly_rate) - monthly_payment;
   printf("Balance remaining after third payment: %.2f\n", loan);
+
+  */
   return 0;
 }
