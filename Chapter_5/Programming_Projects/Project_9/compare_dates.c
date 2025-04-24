@@ -19,6 +19,7 @@ int main(void) {
   printf("Enter second date (mm/dd/yy): ");
   scanf("%d/%d/%d", &second_month, &second_day, &second_year);
 
+  /* First solution */
   if (first_year > second_year) {
     printf("%d/%d/%02d is earlier than %d/%d/%02d\n", second_month, second_day,
            second_year, first_month, first_day, first_year);
@@ -46,6 +47,23 @@ int main(void) {
                first_day, first_year, second_month, second_day, second_year);
       }
     }
+  }
+
+  /* Second Solution */
+
+  if (first_year < second_year ||
+      (first_year == second_year && first_month < second_month) ||
+      first_year == second_year && first_month == second_month &&
+          first_day < second_day) {
+    printf("%d/%d/%02d is earlier than %d/%d/%02d\n", first_month, first_day,
+           first_year, second_month, second_day, second_year);
+  } else if (first_year == second_year && first_month == second_month &&
+             first_day == second_day) {
+    printf("%d/%d/%02d is equal to %d/%d/%02d\n", first_month, first_day,
+           first_year, second_month, second_day, second_year);
+  } else {
+    printf("%d/%d/%02d is earler than %d/%d/%02d\n", second_month, second_day,
+           second_year, first_month, first_day, first_year);
   }
   return 0;
 }
