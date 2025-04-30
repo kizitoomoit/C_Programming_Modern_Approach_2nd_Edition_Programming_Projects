@@ -25,7 +25,7 @@
 int main(void) {
 
   /* Declare variables to be used */
-  int day, days_in_month, startind_day;
+  int day, days_in_month, starting_day;
 
   /* Prompt the user to enter the days in the month */
   printf("Enter number of days in month: ");
@@ -37,13 +37,15 @@ int main(void) {
    */
   printf("Enter Starting day of the week (1=Sun, 7=Sat): ");
   /* Capture users input */
-  scanf("%d", &startind_day);
+  scanf("%d", &starting_day);
 
   /* We want leading dates to be blank if the day does not start from 1 which is
    * Sunday */
-  for (day = 1; day <= startind_day; day++) {
+  for (day = 1; day <= starting_day; day++) {
     printf("  ");
   }
+
+  /* Solution 1 using for loop */
 
   /* print the days of the month */
   for (day = 1; day <= days_in_month; day++) {
@@ -59,9 +61,20 @@ int main(void) {
      * Sunday which is 1 + Sunday starting day which is also 1 we get 2 which is
      * Monday, to get the correct position we - 1, now we have the correct
      * position */
-    if ((day + startind_day - 1) % 7 == 0) {
+    if ((day + starting_day - 1) % 7 == 0) {
       printf("\n");
     }
+  }
+
+  /* Solution 2 using while loop */
+  day = 1;
+  while (day <= days_in_month) {
+    printf("%3d", day);
+
+    if ((day + starting_day - 1) % 7 == 0) {
+      printf("\n");
+    }
+    day++;
   }
 
   printf("\n");
