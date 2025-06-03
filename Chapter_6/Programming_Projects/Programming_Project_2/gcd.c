@@ -6,9 +6,9 @@
  *
  * Hint: The classig algorithm for compunting the GCD, know as Euclid's
  * algorithm, goes as follows: Let m and n be variables containing the two
- * numbers. if  n is 0, then stop: m contains the GCD. Otherwise, computer the
+ * numbers. if  n is 0, then stop: m contains the GCD. Otherwise, compute the
  * remainder when m is divided by n. Copy n into m and copy the remainder into
- * n. The repeat the process. starting with testing wheter n is 0.
+ * n. The repeat the process. starting with testing wether n is 0.
  *
  */
 
